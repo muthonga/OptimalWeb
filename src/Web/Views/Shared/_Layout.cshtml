@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optimal HRM</title>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/assets/images/icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/assets/images/icons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/assets/images/icons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/assets/images/icons/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="~/assets/images/icons/favicon.ico">
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/assets/icons/fontawesome/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/icons/linecons/linecons.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/icons/spinnericon/spinnericon.css">
+</head>
+<body class="fixed-header fixed-sidebar">
+    <div id="sb-site">
+        <div id="loading">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+        <div id="page-wrapper">
+            <div id="page-header" class="bg-blue font-inverse">
+                <div id="mobile-navigation">
+                    <button id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#page-sidebar"><span></span></button>
+                    <a href="index.html" class="logo-content-small" title="MonarchUI"></a>
+                </div>
+                <div id="header-logo" class="logo-bg">
+                    <a href="index.html" class="logo-content-big" title="MonarchUI">
+                        Optimal <i>HRM</i>
+                    </a>
+                    <a href="index.html" class="logo-content-small" title="MonarchUI">
+                        Optimal <i>HRM</i>
+                    </a>
+                    <a id="close-sidebar" href="#" title="Close sidebar">
+                        <i class="glyph-icon icon-angle-left"></i>
+                    </a>
+                    <div id="layout-logo" class="layout-logo" href="#" title="Header Logo">
+                        <img width="30" src="~/assets/image-resources/logo_sm.png" alt="Profile image">
+                        <span>Optimal HRM</span>
+                    </div>
+                </div>
+                <div id="header-nav-left">
+                    <div class="user-account-btn dropdown">
+                        <a href="#" title="My Account" class="user-profile clearfix" data-toggle="dropdown">
+                            <img width="28" src="../../assets/image-resources/gravatar.jpg" alt="Profile image">
+                            <span>Thomas Barnes</span>
+                            <i class="glyph-icon icon-angle-down"></i>
+                        </a>
+                        <div class="dropdown-menu float-left">
+                            <div class="box-sm">
+                                <div class="login-box clearfix">
+                                    <div class="user-img">
+                                        <a href="#" title="" class="change-img">Change photo</a>
+                                        <img src="../../assets/image-resources/gravatar.jpg" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <span>
+                                            Thomas Barnes
+                                            <i>UX/UI developer</i>
+                                        </span>
+                                        <a href="#" title="Edit profile">Edit profile</a>
+                                        <a href="#" title="View notifications">View notifications</a>
+                                    </div>
+                                </div>
+                                <div class="divider"></div>
+                                <ul class="reset-ul mrg5B">
+                                    <li>
+                                        <a href="#">
+                                            <i class="glyph-icon float-right icon-caret-right"></i>
+                                            View login page example
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="glyph-icon float-right icon-caret-right"></i>
+                                            View lockscreen example
+
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="glyph-icon float-right icon-caret-right"></i>
+                                            View account details
+
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="col-md-12">
+                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <div class="pad5A button-pane button-pane-alt text-center">
+                                            <button type="submit" class="btn display-block font-normal btn-danger"><i class="glyph-icon icon-power-off"></i>Logout</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #header-nav-left -->
+                <div id="header-nav-right">
+                    <a href="#" class="hdr-btn popover-button" title="Search" data-placement="bottom" data-id="#popover-search">
+                        <i class="glyph-icon icon-search"></i>
+                    </a>
+                    <div class="hide" id="popover-search">
+                        <div class="pad5A box-md">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search terms here ...">
+                                <span class="input-group-btn">
+                                    <a class="btn btn-primary" href="#">Search</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="hdr-btn" id="fullscreen-btn" title="Fullscreen">
+                        <i class="glyph-icon icon-arrows-alt"></i>
+                    </a>
+                    <a href="#" class="hdr-btn sb-toggle-left" id="chatbox-btn" title="Chat sidebar">
+                        <i class="glyph-icon icon-linecons-paper-plane"></i>
+                    </a>
+                    <div class="dropdown" id="notifications-btn">
+                        <a data-toggle="dropdown" href="#" title="">
+                            <span class="small-badge bg-yellow"></span>
+                            <i class="glyph-icon icon-linecons-megaphone"></i>
+                        </a>
+                        <div class="dropdown-menu box-md float-right">
+
+                            <div class="popover-title display-block clearfix pad10A">
+                                Notifications
+                                <a class="text-transform-cap font-primary font-normal btn-link float-right" href="#" title="View more options">
+                                    More options...
+                                </a>
+                            </div>
+                            <div class="scrollable-content scrollable-slim-box">
+                                <ul class="no-border notifications-box">
+                                    <li>
+                                        <span class="bg-danger icon-notification glyph-icon icon-bullhorn"></span>
+                                        <span class="notification-text">This is an error notification</span>
+                                        <div class="notification-time">
+                                            a few seconds ago
+                                            <span class="glyph-icon icon-clock-o"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pad10A button-pane button-pane-alt text-center">
+                                <a href="#" class="btn btn-primary" title="View all notifications">
+                                    View all notifications
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="header-btn" id="logout-btn" href="lockscreen-3.html" title="Lockscreen page example">
+                        <i class="glyph-icon icon-linecons-lock"></i>
+                    </a>
+                </div><!-- #header-nav-right -->
+
+            </div>
+            <div id="page-sidebar" class="bg-black font-inverse">
+                <div class="scroll-sidebar">
+                    <ul id="sidebar-menu">
+                        <li class="header"><span>NAVIGATOR</span></li>
+                        <li>
+                            <a href="index.html" title="Admin Dashboard">
+                                <i class="glyph-icon icon-linecons-tv"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Elements">
+                                <i class="glyph-icon icon-linecons-diamond"></i>
+                                <span>Leave</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="buttons.html" title="Buttons"><span>Buttons</span></a></li>
+                                    <li><a href="labels-badges.html" title="Labels &amp; Badges"><span>Labels &amp; Badges</span></a></li>
+                                    <li><a href="content-boxes.html" title="Content boxes"><span>Content boxes</span></a></li>
+                                </ul>
+                            </div><!-- .sidebar-submenu -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="page-content-wrapper">
+                <div id="page-content">
+                    <div class="container">
+                        <div id="page-title">
+                            <h2>@ViewData["Title"]</h2>
+                        </div>
+                        <div class="row">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+                <footer class="border-top footer text-muted">
+                    <div class="container">
+                        &copy; 2019 - Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/app.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+    <script type="text/javascript">
+        $(window).ready(function () {
+            setTimeout(function () {
+                $('#loading').fadeOut(400, "linear");
+            }, 300);
+        });
+    </script>
+</body>
+</html>

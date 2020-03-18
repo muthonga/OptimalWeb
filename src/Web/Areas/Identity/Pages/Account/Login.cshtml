@@ -1,0 +1,57 @@
+﻿@page
+@model LoginModel
+@*@{
+        ViewData["Title"] = "Log in";
+    }
+
+    <h1>@ViewData["Title"]</h1>*@
+<div class="row">
+    <section>
+        <form id="login-validation" class="col-md-4 col-sm-5 col-xs-11 col-lg-3 center-margin" method="post">            
+            <div id="login-form" class="content-box bg-default">
+                <div class="content-box-wrapper pad20A">
+                    <img class="mrg25B center-margin radius-all-100 display-block" src="~/assets/image-resources/logo_sm.png" width="30" height="30" alt="">
+                    <h3 class="text-center pad25B font-gray text-transform-upr font-size-23">Optimal HRM</h3>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon addon-inside bg-gray">
+                                <i class="glyph-icon icon-envelope-o"></i>
+                            </span>
+                            <input asp-for="Input.Email" class="form-control" placeholder="Enter email" />
+                        </div>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon addon-inside bg-gray">
+                                <i class="glyph-icon icon-unlock-alt"></i>
+                            </span>
+                            <input asp-for="Input.Password" class="form-control" placeholder="Password" />
+                        </div>
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>                    
+                    <div class="row">
+                        <div class="checkbox-primary col-md-6" style="height: 20px;">
+                            <label asp-for="Input.RememberMe">
+                                <input asp-for="Input.RememberMe" class="custom-checkbox"/>
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+                        <div class="text-right col-md-6">
+                            <a id="forgot-password" class="switch-button" asp-page="./ForgotPassword">Forgot your password?</a>
+                        </div>
+                    </div>
+                    <div class="form-group pad10T">
+                        <button type="submit" class="btn btn-block btn-primary">Log in</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

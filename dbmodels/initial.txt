@@ -1,0 +1,8 @@
+﻿[huresy].[country]
+[huresy].[department]
+[huresy].[empdet]
+[huresy].[emplevel]
+[huresy].[empservicestate]
+[huresy].[empstate]
+[huresy].[job]
+[huresy].[leaveoperation]
